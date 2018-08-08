@@ -913,7 +913,7 @@ def _cut_sequence(sequence, sequence_length, cut_length, max_length):
     padded = ops.pad_to(sequence, length, 1)
 
     #cut the data into equal parts into a TensorArray
-    element_shape = sequence.shape[0].concatenate(
+    element_shape = sequence.shape.concatenate(
         tf.TensorShape([cut_length])).concatenate(sequence.shape[2:])
     cut = tf.TensorArray(
         dtype=sequence.dtype,
