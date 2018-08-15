@@ -908,7 +908,7 @@ def _cut_sequence(sequence, sequence_length, cut_length, max_length):
     '''
 
     #pad the sequence to a multiple of cut_length
-    numcuts = tf.toint32(tf.ceil(tf.shape(sequence)[1]/cut_length))
+    numcuts = tf.to_int32(tf.ceil(tf.shape(sequence)[1]/cut_length))
     length = numcuts*cut_length
     padded = ops.pad_to(sequence, length, 1)
 
